@@ -60,7 +60,8 @@ const realMaterial = new THREE.MeshPhysicalMaterial({
     transmission: 1,
     thickness: 0.5,
     transparent: 0.5,
-    envMap: environmentMapTexture
+    envMap: environmentMapTexture,
+    ior: 1.2
 })
 
 var meshDiamond = gltfLoader.load(
@@ -94,6 +95,7 @@ gui.add(realMaterial,'roughness').min(0).max(1).step(0.0001)
 gui.add(realMaterial, 'clearcoat').min(0).max(1).step(0.0001)
 gui.add(realMaterial, 'transmission').min(0).max(1).step(0.0001)
 gui.add(realMaterial, 'thickness').min(0).max(1).step(0.0001)
+gui.add(realMaterial, 'ior').min(0).max(2.5).step(0.0001)
 
 
 const material = new THREE.MeshStandardMaterial()
