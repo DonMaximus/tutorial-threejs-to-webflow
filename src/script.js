@@ -14,16 +14,6 @@ const gui = new dat.GUI()
 const textureLoader = new THREE.TextureLoader()
 const cubeTextureLoader = new THREE.CubeTextureLoader()
 
-const doorColorTexture = textureLoader.load('/textures/door/color.jpg')
-const doorAlphaTexture = textureLoader.load('/textures/door/alpha.jpg')
-const doorAmbientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclusion.jpg')
-const doorHeightTexture = textureLoader.load('/textures/door/height.jpg')
-const doorNormalTexture = textureLoader.load('/textures/door/normal.jpg')
-const doorMetalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
-const doorRoughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
-const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
-const gradientTexture = textureLoader.load('/textures/gradients/5.jpg')
-
 const bgTexture = textureLoader.load('textures/bg.jpg')
 
 const environmentMapTexture = cubeTextureLoader.load([
@@ -69,7 +59,8 @@ const realMaterial = new THREE.MeshPhysicalMaterial({
     clearcoat: 0.3,
     transmission: 1,
     thickness: 0.5,
-    transparent: 0.5
+    transparent: 0.5,
+    envMap: environmentMapTexture
 })
 
 var meshDiamond = gltfLoader.load(
