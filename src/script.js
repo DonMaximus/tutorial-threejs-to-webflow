@@ -77,6 +77,7 @@ var meshDiamond = gltfLoader.load(
         gltf.scene.scale.set(0.6,0.6,0.7)
         gltf.scene.position.set(0.2,1,0)
         gltf.scene.rotation.set(0.4,0.3,-0.3)
+        //meshDiamond.geometry.setAttribute('uv2', new THREE.BufferAttribute(meshDiamond.geometry.attributes.uv.array, 2))
         scene.add(gltf.scene)
 
     }
